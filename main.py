@@ -68,7 +68,7 @@ class No_Clue(App):
         print(rcost)
 
 
-        self.screenManager.get_screen('ResultWindow').labelText = (final)
+        self.screenManager.get_screen('dennis').labelText = (final)
 
 
         return final
