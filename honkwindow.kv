@@ -1,0 +1,103 @@
+WindowManager:
+    ButtonWindow:
+    ResultWindow:
+
+<ButtonWindow>:
+    name: "henry"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            text: "Choose A Price Group"
+            font_size: 48
+            color: .57, 1, .98, .8
+
+        Button:
+            text: "Broke"
+            font_size: 48
+            on_press:
+                app.FindFood("1")
+                app.rcost = "1"
+                #app.RestName()
+
+            on_release:
+                app.root.current = "dennis"
+                root.manager.transition.direction = "left"
+            color: .37, 1, .31, .8
+
+        Button:
+            text: "Well... it's not McDonalds"
+            font_size: 48
+            on_press:
+                app.FindFood("2")
+                app.rcost = "2"
+                #app.RestName()
+
+            on_release:
+                app.root.current = "dennis"
+                root.manager.transition.direction = "left"
+            color: 1, .94, .33, .8
+
+        Button:
+            text: "Going to have to leave a tip"
+            font_size: 48
+            on_press:
+                app.FindFood("3")
+                app.rcost = "3"
+                #app.RestName()
+
+            on_release:
+                app.root.current = "dennis"
+                root.manager.transition.direction = "left"
+            color: 1, .6, .18, .8
+
+        Button:
+            text: "The bill is probably higher than my IQ"
+            font_size: 48
+            on_press:
+                app.FindFood("4")
+                app.rcost = "4"
+                #app.RestName()
+
+            on_release:
+                app.root.current = "dennis"
+                root.manager.transition.direction = "left"
+            color: 1, .18, .18, .8
+
+
+<ResultWindow>:
+    name: "dennis"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: ok
+            text: root.labelText
+            font_size: 24
+            color: .57, 1, .98, .8
+
+        Button:
+            text: "Take Me There!"
+            font_size: 48
+            on_release:
+                app.OpenLink()
+            color: .37, 1, .31, .8
+
+        Button:
+            text: "Gimme another choice"
+            font_size: 48
+            on_release:
+                app.FindFood(app.rcost)
+            color: 1, .94, .33, .8
+
+        Button:
+            text: "Take me back"
+            font_size: 48
+            on_release:
+                app.root.current = "henry"
+                root.manager.transition.direction = "right"
+            color: 1, .18, .18, .8
